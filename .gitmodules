@@ -1,0 +1,3 @@
+[submodule "rtdb2"]
+	path = rtdb2
+	url = git@github.com:RoboCup-MSL/rtdb2.git

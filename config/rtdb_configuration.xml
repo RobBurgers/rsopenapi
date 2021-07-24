@@ -1,0 +1,47 @@
+<RtDB2Configuration>
+  <Networks>
+    <Network loopback="false" send="false">
+      <MulticastAddress>224.16.32.56</MulticastAddress>
+      <MulticastPort>8011</MulticastPort>
+      <Frequency>40</Frequency>
+    </Network>
+    <Network name="rsopenapi" database="rsopenapi" loopback="false" send="true">
+      <MulticastAddress>224.16.32.56</MulticastAddress>
+      <MulticastPort>8012</MulticastPort>
+      <Frequency>40</Frequency>
+    </Network>
+  </Networks>
+  <Databases>
+    <Database>
+      <Compression type="zstd"/>
+      <KeyDefaults shared="true" period="1" phase="0" timeout="1.0"/>
+      <Keys>
+        <Key id="METADATA"/>
+        <Key id="HW_STATUS"/>
+        <Key id="PLAYER_STATUS"/>
+        <Key id="LOCAL_SELF"/>
+        <Key id="LOCAL_BALL"/>
+        <Key id="LOCAL_OBSTACLES"/>
+        <Key id="FUSED_BALL"/>
+        <Key id="FUSED_US"/>
+        <Key id="FUSED_THEM"/>
+        <Key id="FUSED_SELFLOC"/>
+        <Key id="FUSED_SELFLOC_OMNI"/>
+        <Key id="PASS_DETAIL"/>
+        <Key id="PASS_REQUEST"/>
+        <Key id="BALL_PICKUP"/>
+        <Key id="PLANNED_PATH"/>
+        <Key id="TIME_IN_OWN_PENALTY_AREA"/>
+        <Key id="TIME_IN_OPPONENT_PENALTY_AREA"/>
+      </Keys>
+    </Database>
+    <Database name="rsopenapi">
+      <Compression type="zstd"/>
+      <KeyDefaults shared="true" period="1" phase="0" timeout="1.0"/>
+      <Keys>
+        <Key id="VELOCITY"/>
+        <Key id="KICK"/>
+      </Keys>
+    </Database>
+  </Databases>
+</RtDB2Configuration>
