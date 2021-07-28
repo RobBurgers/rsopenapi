@@ -41,7 +41,7 @@ int main(int argc, char **argv)
     // Extract hash
     uint64_t hash = string2uint(hashstr);
     std::cout << "Target robot: " << robotid << std::endl;
-    std::cout << "Using robot hash: " << std::hex << hash << std::endl;
+    std::cout << "Using robot hash: " << std::hex << hash << std::dec << std::endl;
 
     // Start communication service
     rsopen::Service service;
@@ -49,6 +49,7 @@ int main(int argc, char **argv)
 
     // Create proxy to robot
     rsopen::Robot robot(robotid, hash);
+    robot.writeKickElevation(true); // lob shot
 
     // Control robot
     float t = 0;
@@ -58,8 +59,15 @@ int main(int argc, char **argv)
         if (robot.read(data))
         {
             // successful read
-            std::cout << "Robot at (" << data.self.pose.x << ", " << data.self.pose.y << ", " << data.self.pose.rz << ")" << std::endl;
+            std::cout << "Robot at (" << data.self.pose.x << ", " << data.self.pose.y << ", " << data.self.pose.rz << ")" 
+                      << "; Control ball: " << data.player_status.control_ball << std::endl;
             usleep(250000);
+
+            if (data.player_status.control_ball)
+            {
+                std::cout << "Kicking ball..." << std::endl;
+                robot.writeKick(5);
+            }
         }
         else
         {

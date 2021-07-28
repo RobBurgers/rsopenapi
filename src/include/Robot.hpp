@@ -17,14 +17,15 @@ public:
     bool read(interrobot_t& data);
     void writeVelocity(float vx, float vy, float vrz);
     void writeKickElevation(bool isLobShot);
-    void writeKick(float v);
+    void writeKick(float speed);
 
 private:
 	int m_id; // id for this robot
 	std::unique_ptr<RtDB2> m_rtdb_in;
 	std::unique_ptr<RtDB2> m_rtdb_out;
     std::string m_hash;
-
+    uint32_t m_last_tick;
+    bool m_is_lob;
 }; // end of class Robot
 
 } // end of namespace mtp
