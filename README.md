@@ -1,6 +1,6 @@
 # rsopenapi
 
-rsopenapi offers an API to control a [robotsports](https://www.robotsports.nl) soccer robot. A client can retrieve with robot status information from the robot and send control commands to the robot.
+rsopenapi offers an API to control a [robotsports](https://www.robotsports.nl) soccer robot. A client can retrieve status information from the robot and send control commands to the robot.
 
 The status information includes:
 
@@ -10,6 +10,8 @@ The status information includes:
 * Obstacle positions
 * Ball possession status
 * Hardware status
+
+The complete set of status information is listed in [rtdb_types.h](src/include/rtdb_types.h)
 
 The control commands are:
 
