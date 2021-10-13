@@ -18,7 +18,7 @@ uint64_t string2uint(const std::string& s)
         ss >> result;
         return result;
     }
-    return atol(s.c_str());
+    return std::stoull(s);
 }
 
 int main(int argc, char **argv)
