@@ -3,7 +3,7 @@
 #include <sstream>
 #include <rsopenapi_types.h>
 
-const int RSOPEN_CLIENTID = 569;
+const int RSOPEN_CLIENTID = 125;
 const std::string KEY_KICK = "KICK";
 const std::string KEY_VELOCITY = "VELOCITY";
 

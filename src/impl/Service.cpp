@@ -5,7 +5,7 @@
 #include <sstream>
 #include <sys/stat.h>
 
-const int RSOPEN_CLIENTID = 569;
+const int RSOPEN_CLIENTID = 125;
 const std::string CONFIGFILENAME = "rtdb_configuration.xml";
 
 using namespace rsopen;
@@ -28,7 +28,7 @@ void Service::start()
 void Service::startSubscriber()
 {
     // start shared data subscriber
-    RtDB2Context ctx = RtDB2Context::Builder(569, RtDB2ProcessType::comm)
+    RtDB2Context ctx = RtDB2Context::Builder(RSOPEN_CLIENTID, RtDB2ProcessType::comm)
                            .withConfigFileName(m_configfile)
                            .build();
     m_subscriber = std::make_unique<Comm>(ctx);
@@ -39,7 +39,7 @@ void Service::startSubscriber()
 void Service::startPublisher()
 {
     // start rsopenapi publisher
-    RtDB2Context ctx = RtDB2Context::Builder(569, RtDB2ProcessType::comm)
+    RtDB2Context ctx = RtDB2Context::Builder(RSOPEN_CLIENTID, RtDB2ProcessType::comm)
                            .withConfigFileName(m_configfile)
                            .withNetwork("rsopenapi")
                            .build();
