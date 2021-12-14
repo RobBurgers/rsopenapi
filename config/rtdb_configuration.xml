@@ -44,4 +44,5 @@
       </Keys>
     </Database>
   </Databases>
+  <InterfacePriorityList>eth0</InterfacePriorityList>
 </RtDB2Configuration>
