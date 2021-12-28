@@ -20,14 +20,16 @@ The control commands are:
 
 # build
 
-To build the code in this repository (see required depedencies below):
+To build the code in this repository (see required dependencies below):
 
-* `git submodule init`
-* `git submodule update`
-* `mkdir build`
-* `cd build`
-* `cmake ..`
-* `make`
+```sh
+git submodule init
+git submodule update
+mkdir build
+cd build
+cmake ..
+make
+```
 
 ## dependencies
 
@@ -58,14 +60,18 @@ To try the example in a docker environment you need three docker containers:
 
 The robot simulation runs one simulated robot and starts with these command:
 
-* `cd scripts`
-* `./rsim.sh`
+```sh
+cd scripts
+./rsim.sh
+```
 
 The container starts in interactive mode, meaning that you can execute commands
 inside the container while it is running. To put the simulated robot in the
 right mode to interface with an rsopenapi based application run this command:
 
-* `./rsopenapi.sh -i 1`
+```sh
+`./rsopenapi.sh -i 1
+```
 
 Note: This command also moves to robot to the center of the field, facing the
 ball.
@@ -74,8 +80,10 @@ ball.
 
 The graphical user interface start with these commands (in a separate terminal window):
 
-* `cd scripts`
-* `./gui.sh`
+```sh
+cd scripts
+./gui.sh
+```
 
 The user interface is published on [http://localhost:6080](http://localhost:6080/)
 (it opens automatically when using Firefox).
@@ -88,11 +96,15 @@ After checking the checkbox on robot 1 and selecting '3d-Field view' the simulat
 
 The docker container for the software development environment must be built locally (in yet another terminal window):
 
-* `./docker-build.sh`
+```sh
+./docker-build.sh
+```
 
 After a successful build it starts with:
 
-* `./docker-run.sh`
+```sh
+./docker-run.sh
+```
 
 The docker container runs in interactive mode and automatically mounts the
 current working directory inside the container as directory `/workspace`.
@@ -100,7 +112,9 @@ It uses your local account and user id and all modified files are being stored o
 
 Inside the container the example runs using (watch the gui while running the command):
 
-* `./example.sh`
+```sh
+./example.sh
+```
 
 Note: This scripts builds the example and runs it. In case the build fails you need to clean your build directory before running again.
 
