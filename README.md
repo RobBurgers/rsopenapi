@@ -121,3 +121,6 @@ To run the example client application from this repository:
   `cd build/bin`  
   `./example -h <hash> -r 1`
 
+# license
+
+This software is licenced under the MIT license, which can be found in [LICENSE](LICENSE). By using, distributing, or contributing to this project, you agree to the terms and conditions of this license.
