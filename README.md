@@ -20,7 +20,7 @@ The control commands are:
 
 # build
 
-To build the code in this repository:
+To build the code in this repository (see required depedencies below):
 
 * `git submodule init`
 * `git submodule update`
@@ -28,6 +28,23 @@ To build the code in this repository:
 * `cd build`
 * `cmake ..`
 * `make`
+
+## dependencies
+
+The dependencies required for this project are:
+
+```sh
+apt install -y \
+    cmake \
+    g++ \
+    libboost-all-dev \
+    liblmdb-dev \
+    liblz4-dev \
+    libmsgpack-dev \
+    libxerces-c3-dev \
+    libzstd-dev \
+    xsdcxx
+```
 
 # try example in docker environment
 
