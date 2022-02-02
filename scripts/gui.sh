@@ -2,7 +2,7 @@
 
 REPO=robotsports
 IMAGE=focal-gui
-TAG=1
+TAG=latest
 URL=http://localhost:6080
 
 if [ -z "$SUDO_UID" ]; then

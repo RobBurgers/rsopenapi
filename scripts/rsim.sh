@@ -2,7 +2,7 @@
 
 REPO=robotsports
 IMAGE=focal-sim
-TAG=2
+TAG=latest
 
 docker run --rm -it \
   -v $XAUTH:$XAUTH \
