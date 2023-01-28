@@ -14,9 +14,17 @@ public:
     Robot(int id, uint64_t hash);
 
     std::string describe() const;
+
+    // read the latest availabe robot data
     bool read(interrobot_t& data);
+
+    // sets velocity in robot coordinates in [m/s] and [rad/s]
     void writeVelocity(float vx, float vy, float vrz);
+
+    // sets horizontal (false) or lob (true) shot
     void writeKickElevation(bool isLobShot);
+
+    // triggers a kick with the given ball speed [m/s]
     void writeKick(float speed);
 
 private:
