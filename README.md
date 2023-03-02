@@ -135,6 +135,22 @@ To run the example client application from this repository:
   `cd build/bin`  
   `./example -h <hash> -r 1`
 
+# troubleshooting
+
+## No Data
+
+In case the example client repeatedly reports 'No Data' this may indicate that the robot simulator is not running or that the network configuration of the example application does not match the network configuration on the host. The example application by default binds to network interface `eth0` or `docker0`. If these interfaces do not exist on the host, the example application may not bind to an inappropriate interface.
+
+To fix this, update this line in `config/rtdb_configuration.xml` with the interface that is used by the robot simulator (space separated list in order of priority):
+
+```xml
+  <InterfacePriorityList>eth0 docker0</InterfacePriorityList>
+```
+
+Use command '`ip a`' to list all interfaces. The interface name is shown directly after the sequence number.
+
+When updating the configuration file, '`cmake ..`' must be run again from the `build` directory.
+
 # API
 
 ## coordinate system
