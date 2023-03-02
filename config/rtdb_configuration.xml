@@ -44,5 +44,5 @@
       </Keys>
     </Database>
   </Databases>
-  <InterfacePriorityList>eth0</InterfacePriorityList>
+  <InterfacePriorityList>eth0 docker0</InterfacePriorityList>
 </RtDB2Configuration>
